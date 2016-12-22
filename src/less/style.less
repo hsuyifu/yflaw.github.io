@@ -20,7 +20,7 @@
 }
 
 .wrap {
-    @ratio: 1;
+    @ratio: 0.9;
     @bgW: 160px * @ratio;
     @bgH: 130px * @ratio;
     position: relative;
@@ -129,6 +129,19 @@ h1 {
                 color: #000;
             }
         }
+    }
+}
+.hero {
+    position: relative;
+    overflow: hidden;
+    max-height: 340px;
+    width: 100%;
+    height: 100%;
+    margin: 12px auto 0 auto;
+    img {
+        position: relative;
+        margin: 0 auto;
+        width: 100%;
     }
 }
 .body {
