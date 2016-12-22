@@ -28,7 +28,7 @@ gulp.task('css', function() {
         keepSpecialComments: 0
     };
 
-    return gulp.src('./src/less/**/*.less')
+    return gulp.src('./src/less/style.less')
     .pipe(less({
       paths: [ path.join(__dirname, 'less', 'includes') ]
     }))
