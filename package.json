@@ -1,0 +1,52 @@
+{
+    "name": "YFLaw-Website",
+    "author": {
+        "name": "Azai Chan",
+        "email": "azai.tw@gmail.com"
+    },
+    "version": "0.0.1",
+    "description": "YFLaw website with build scripts",
+    "homepage": "",
+    "keywords": [],
+    "main": "server.js",
+    "scripts": {
+        "dev": "gulp build-dev; node server.js",
+        "start": "node server.js",
+        "build": "gulp build",
+        "build-dev": "gulp build-dev",
+        "less": "gulp less",
+        "css": "gulp minify-css",
+        "lint": "gulp lint",
+        "template": "gulp render-template"
+    },
+    "dependencies": {
+        "express": "4.11.2",
+        "gulp": "3.8.10",
+        "gulp-base64": "0.1.2",
+        "gulp-compile-handlebars": "0.4.4",
+        "gulp-concat": "*",
+        "gulp-inline-source": "*",
+        "gulp-jshint": "*",
+        "gulp-jsonlint": "*",
+        "gulp-less": "3.0.1",
+        "gulp-minify-css": "0.4",
+        "gulp-minify-html": "*",
+        "gulp-rename": "*",
+        "gulp-tinypng": "*",
+        "gulp-uglify": "*",
+        "gulp-watch": "*"
+    },
+    "repository": {
+    "type": "git",
+    "url": "git://github.com/azaitw/yflaw.git"
+    },
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": ""
+        }
+    ],
+    "engines": {
+        "node": ">= 0.10.0"
+    }
+}

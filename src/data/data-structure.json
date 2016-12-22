@@ -1,0 +1,31 @@
+{
+    "title": "悠乎法律事務所 | 民事刑事訴訟辯護律師 - 徐一夫",
+    "yflaw": "悠乎法律事務所",
+    "specialties": [
+        "酒駕",
+        "偷人",
+        "變態",
+        "伴遊"
+    ],
+    "menu": [
+        {
+            "name": "關於悠乎",
+            "url": "#about"
+        },
+        {
+            "name": "服務與費用",
+            "url": "#service"
+        },
+        {
+            "name": "聯絡我",
+            "url": "#contact"
+        }
+    ],
+    "footer": [
+        {
+            "name": "悠乎法律事務所",
+            "address": "台北市xxx yyy zzz",
+            "phone": "8888-8888"
+        }
+    ]
+}
