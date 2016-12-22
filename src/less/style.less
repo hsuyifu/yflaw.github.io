@@ -209,5 +209,43 @@ h1 {
 }
 */
 @media only screen and (max-width: 650px) { /* smartphone */
-
+    .wrap {
+        width: 100%;
+        &:before {
+            width: 100%;
+        }
+    }
+    .header {
+        width: 300px;
+        margin: 0 auto;
+        padding: 30px 0 10px;
+        .banner {
+            display: none;
+        }
+    }
+    .hero {
+        height: 200px;
+        img {
+            width: 110%;
+            left: -5%;
+        }
+    }
+    .body {
+        padding: 10px 20px;
+    }
+    .content {
+        width: 100%;
+        .sec {
+            margin: 0 0 25px 0;
+        }
+    }
+    .sidebar {
+        width: 100%;
+        border-top: 1px solid #aaa;
+        padding: 15px 0 0 0;
+    }
+    .footer {
+        width: 100%;
+        margin: 0 auto 2px auto;
+    }
 }
