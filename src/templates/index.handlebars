@@ -2,19 +2,30 @@
 <html>
     <head>
         <meta charset="utf-8" />
-        <title>{{title}}</title>
+        <title>{{htmlTitle}}</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
         <link rel="stylesheet" href="./production.css" inline />
     </head>
     <body>
-        {{>header}}
-        {{>navigation}}
-        <div class="body">
-            <section>
-                test test
-            </section>
-            {{>sidebar}}
+        <div class="wrap">
+            {{>header}}
+            {{>menu}}
+            <div class="body">
+                <div class="content">
+                    {{#content}}
+                    <div class="sec">
+                        <section>
+                            <h2 {{#if url}}name="{{url}}"{{/if}}>{{title}}</h2>
+                            {{#p}}
+                                <p>{{.}}</p>
+                            {{/p}}
+                        </section>
+                    </div>
+                    {{/content}}
+                </div>
+                {{>sidebar}}
+            </div>
         </div>
         {{>footer}}
     </body>

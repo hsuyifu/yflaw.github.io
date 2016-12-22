@@ -1,0 +1,198 @@
+@import "normalize.less";
+@import "fonts.less";
+
+@baseColor: #231916;
+@pageW: 960px;
+
+/* Clearfix */
+.Cf:before,
+.Cf:after {content: " ";display: table}
+.Cf:after {clear: both}
+.Cf {*zoom: 1}
+
+/* Hide text */
+.noTxt {
+    position: absolute !important;
+    height: 1px; 
+    width: 1px; 
+    overflow: hidden; 
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */ 
+    clip: rect(1px, 1px, 1px, 1px); 
+}
+
+.wrap {
+    @ratio: 1;
+    @bgW: 160px * @ratio;
+    @bgH: 130px * @ratio;
+    position: relative;
+    font-family: 'Noto Sans TC', sans-serif;
+    width: @pageW;
+    margin: 0 auto;
+    box-shadow: #231916 0 1px 1px;
+    background: url('../images/banner_s.png') no-repeat;
+    background-size: @bgW @bgH;
+    background-position: 665px 30px;
+    &:before {
+        @diff: -1px;
+        display: block;
+        content: " ";
+        position: absolute;
+        top: 0;
+        left: @diff;
+        width: @pageW - (@diff * 2);
+        height: 3px;
+        background: @baseColor;
+    }
+}
+.header {
+    position: relative;
+    height: 60px;
+    padding: 30px 18px 15px 30px;
+}
+.logo {
+    @ratio: 0.5;
+    @logoSize: 90px * @ratio;
+    position: absolute;
+    background: url('../images/logo.png') no-repeat;
+    background-size: @logoSize @logoSize;
+    width: @logoSize;
+    height: @logoSize;
+}
+h1 {
+    position: absolute;
+    left: 85px;
+    font-size: 20px;
+    margin: 0;
+    .title {
+        @ratio: 0.5;
+        @w: 400px * @ratio;
+        @h: 47px * @ratio;
+        background: url('../images/title.png') no-repeat;
+        background-size: @w @h;
+        width: @w;
+        height: @h;
+        color: transparent;
+        white-space: nowrap;
+        font-size: 24px;
+        letter-spacing: 5px;
+    }
+    .specialties {
+        font-size: 13px;
+        color: #93908f;
+        font-weight: 100;
+        margin: 5px 0 0 0;
+        letter-spacing: 1px;
+    }
+}
+.menu {
+    padding: 0 5px 0 8px;
+    ul {
+        font-size: 0;
+    }
+    li {
+        position: relative;
+        display: inline-block;
+        font-size: 17px;
+        letter-spacing: 0.7px;
+        font-weight: 400;
+        margin: 0 16px;
+        &:before {
+            display: block;
+            content: " ";
+            position: absolute;
+            top: 8px;
+            left: -18px;
+            width: 1px;
+            height: 12px;
+            background: #aaa;
+        }
+        &:first-child {
+            &:before {
+                display: none;
+            }
+        }
+        a {
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            padding: 5px 6px 1px 6px;
+            &:link,
+            &:visited {
+                color: #555;
+            }
+            &:hover {
+                color: #49332d;
+                border-color: @baseColor;
+            }
+            &:active {
+                color: #000;
+            }
+        }
+    }
+}
+.body {
+    padding: 45px 30px;
+    font-size: 0;
+    line-height: 28px;
+    color: #666;
+    font-weight: 300;
+}
+.content {
+    width: 65%;
+    padding: 0 5% 0 0;
+    display: inline-block;
+    font-size: 16px;
+    vertical-align: top;
+    .sec {
+        margin: 0 0 35px 0;
+    }
+    h2 {
+        font-weight: 400;
+        font-size: 20px;
+        color: #555;
+        letter-spacing: 1.5px;
+        margin: 0 0 2px 0;
+    }
+}
+.sidebar {
+    width: 30%;
+    display: inline-block;
+    font-size: 16px;
+    vertical-align: top;
+    .sec {
+        margin: 0 0 28px 0;
+    }
+    h2 {
+        font-weight: 400;
+        font-size: 17px;
+        color: #555;
+        letter-spacing: 1.5px;
+        margin: 0 0 2px 0;
+    }
+}
+.footer {
+    position: relative;
+    width: @pageW;
+    margin: 0 auto 30px auto;
+    padding: 22px 0 32px 0;
+    text-align: center;
+    background: #dbfffb;
+    box-shadow: #231916 0 1px 1px;
+    font-size: 13px;
+    line-height: 23px;
+    color: #666;
+    .name {
+        font-size: 14px;
+        letter-spacing: 0.3px;
+    }
+}
+/*
+.copyright {
+    font-size: 12px;
+    color: @baseColor;
+    text-align: center;
+    margin: 0 0 40px 0;
+}
+*/
+@media only screen and (max-width: 650px) { /* smartphone */
+
+}
