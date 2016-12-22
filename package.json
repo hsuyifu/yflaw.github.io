@@ -12,7 +12,7 @@
     "scripts": {
         "dev": "gulp build-dev; node server.js",
         "start": "node server.js",
-        "build": "gulp build",
+        "build": "mkdir ./src/rendered; gulp build; rm -rf ./src/rendered",
         "less": "gulp less",
         "css": "gulp minify-css",
         "lint": "gulp lint",
