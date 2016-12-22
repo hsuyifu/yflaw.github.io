@@ -4,7 +4,7 @@
 
     var posY = window.pageYOffset;
     var moveRange = 50;
-    var moveIndex = 0.3;
+    var moveIndex = 0.15;
     var windowWidth = window.innerWidth;
     var getParallex = function (posY, moveIndex, moveRange) {
         var distance = (posY * moveIndex)  - moveRange;
