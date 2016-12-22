@@ -50,7 +50,6 @@ gulp.task('copy-css', ['less'], function () {
     .pipe(gulp.dest('./src/rendered'));
 });
 
-
 // Concat and compress JS files in src/data/javascript, and generate build/production.js
 gulp.task('minify-js', function () {
     var jsfilesToBuild;
@@ -84,7 +83,7 @@ gulp.task('render-template', ['jsonlint'], function (done) {
    var options = {
        ignorePartials: true,
        batch : ['./src/templates/partials']
-   }
+   };
 
    fs.readFile(filepath, {encoding: 'utf-8'}, function (err, D) {
        var data;
@@ -102,7 +101,7 @@ gulp.task('render-template', ['jsonlint'], function (done) {
    });
 
 });
-gulp.task('build', ['copy-and-compress'], function () {
+gulp.task('build', ['render-template', 'minify-js', 'minify-css'], function () {
     var optsHtml = {
       conditionals: true,
       spare: true
@@ -110,30 +109,18 @@ gulp.task('build', ['copy-and-compress'], function () {
     var optsInline = {
         swallowErrors: true
     };
+
     return gulp.src('./src/rendered/*.html')
     .pipe(base64())
     .pipe(inlinesource(optsInline))
-//    .pipe(minifyHTML(optsHtml))
-    .pipe(gulp.dest('build'));
-});
-
-// Copy build/production.js and build/production.css into src/html/index.html, compress html, and generate build/index.html
-gulp.task('build-dev', ['copy'], function (done) {
-    return gulp.src('./src/rendered/*.html')
-    .pipe(base64())
-    .pipe(gulp.dest('build'));
-});
-
-// Copy build/production.js and build/production.css into src/html/index.html, compress html, and generate build/index.html
-gulp.task('copy', ['render-template', 'copy-js', 'copy-css'], function (done) {
-    return gulp.src('./src/rendered/*')
-    .pipe(gulp.dest('build'));
+    .pipe(minifyHTML(optsHtml))
+    .pipe(gulp.dest('.'));
 });
 
 // Copy build/production.js and build/production.css into src/html/index.html, compress html, and generate build/index.html
 gulp.task('copy-and-compress', ['render-template', 'minify-js', 'minify-css'], function (done) {
     return gulp.src('./src/rendered/*')
-    .pipe(gulp.dest('build'));
+    .pipe(gulp.dest('.'));
 });
 
 // Validate all JS files

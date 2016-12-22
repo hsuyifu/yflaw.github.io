@@ -13,7 +13,6 @@
         "dev": "gulp build-dev; node server.js",
         "start": "node server.js",
         "build": "gulp build",
-        "build-dev": "gulp build-dev",
         "less": "gulp less",
         "css": "gulp minify-css",
         "lint": "gulp lint",
