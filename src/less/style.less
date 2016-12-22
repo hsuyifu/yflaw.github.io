@@ -20,17 +20,11 @@
 }
 
 .wrap {
-    @ratio: 0.9;
-    @bgW: 160px * @ratio;
-    @bgH: 130px * @ratio;
     position: relative;
     font-family: 'Noto Sans TC', sans-serif;
     width: @pageW;
     margin: 0 auto;
     box-shadow: #231916 0 1px 1px;
-    background: url('../images/banner_s.png') no-repeat;
-    background-size: @bgW @bgH;
-    background-position: 665px 30px;
     &:before {
         @diff: -1px;
         display: block;
@@ -47,6 +41,7 @@
     position: relative;
     height: 60px;
     padding: 30px 18px 15px 30px;
+    z-index: 10;
 }
 .logo {
     @ratio: 0.5;
@@ -85,6 +80,20 @@ h1 {
     a {
         text-decoration: none;
     }
+}
+.banner {
+    @ratio: 1;
+    @bgW: 160px * @ratio;
+    @bgH: 130px * @ratio;
+    position: absolute;
+    width: @bgW;
+    height: @bgH;
+    background: url('../images/banner_s.png') no-repeat;
+    background-size: @bgW @bgH;
+    right: 140px;
+    top: 40px;
+    z-index: 1;
+//    background-position: 665px 30px;
 }
 .menu {
     padding: 0 5px 0 8px;
