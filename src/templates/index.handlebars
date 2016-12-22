@@ -16,7 +16,13 @@
                     {{#content}}
                     <div class="sec">
                         <section>
-                            <h2 {{#if url}}name="{{url}}"{{/if}}>{{title}}</h2>
+                            {{#if url}}
+                            <h2>
+                                <a name="{{url}}">{{title}}</a>
+                            </h2>
+                            {{else}}
+                            <h2>{{title}}</h2>
+                            {{/if}}
                             {{#p}}
                                 <p>{{.}}</p>
                             {{/p}}
