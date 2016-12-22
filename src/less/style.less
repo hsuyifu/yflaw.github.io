@@ -2,6 +2,8 @@
 
 @baseColor: #231916;
 @pageW: 960px;
+@bannerW: 225px;
+@bannerH: 182px;
 
 /* Clearfix */
 .Cf:before,
@@ -83,12 +85,12 @@ h1 {
 }
 .banner {
     @ratio: 1;
-    @bgW: 225px * @ratio;
-    @bgH: 182px * @ratio;
+    @bgW: @bannerW * @ratio;
+    @bgH: @bannerH * @ratio;
     position: absolute;
+    background: url('../images/banner.png') no-repeat;
     width: @bgW;
     height: @bgH;
-    background: url('../images/banner.png') no-repeat;
     background-size: @bgW @bgH;
     right: 80px;
     top: 130px;
@@ -229,7 +231,14 @@ h1 {
         margin: 0 auto;
         padding: 30px 0 10px;
         .banner {
-            display: none;
+            @ratio: 0.55;
+            @bgW: @bannerW * @ratio;
+            @bgH: @bannerH * @ratio;
+            width: @bgW;
+            height: @bgH;
+            background-size: @bgW @bgH;
+            top: 153px;
+            right: -15px;
         }
     }
     .hero {
